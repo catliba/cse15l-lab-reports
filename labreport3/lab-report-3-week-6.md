@@ -8,18 +8,17 @@ To do so, we will let ```scp``` copy recursively, with:
 cs15lwi22akj is my account name. It should vary depending on your remote server access
  
 ```-r``` tells ```scp``` to work recursively.\
-```.``` means the source, the currenty directory. \
+```.``` means the source, the currenty directory. You can also add certain files to copy over, for example:\ 
+```scp -r *.java *.md /lib``` copies only files that end with ```.java```, ```.md``` and ```/lib```\
 ```~/markdown-parse``` tells ```scp``` to create ```markdown-parse``` directory on the remote server and then copy the current directory to there.
 
  Doing so, you copy all files onto the directory.\
  ![Image](sc1.png)
 This copied ALL files onto the a new markdown-parse folder, and we can run these programs.\
 ![Image](sc2.png)
-An alternate way to copy files is\
-```scp -r *.java *.md /lib``` copies only files that end with ```.java```, ```.md``` and ```/lib```\
 
 Now, we can run it all in one line.
 Copying all the files we want and runnning the JUnit test.
 
-![Image](sc3.png)
 ![Image](sc4.png)
+![Image](sc3.png)
