@@ -28,10 +28,10 @@ A check for backticks (<10 lines) could be added to my implementation of Markdow
 
 *Do you think there is a small (<10 lines) code change that will make your program work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets? If yes, describe the code change. If not, describe why it would be a more involved change.*
 
-For unwanted symbols, you can do an if statement that checks if any of the parentheses, brackets, etc are in the link. If so, do not print out the link.
+Yes. For unwanted symbols, you can do a simple if statement that checks if any of the parentheses, brackets, etc are in the link. If so, do not print out the link.
 
 *Do you think there is a small (<10 lines) code change that will make your program work for snippet 3 and all related cases that have newlines in brackets and parentheses? If yes, describe the code change. If not, describe why it would be a more involved change.*
 
-To check for newlines, I would have an if statment to see if there is a newline during the creation of the code. A newline may appear before the closed parentheses/brackets or after the open ones and by checking those location for newlines, you can decide whether or not to print the code. For my implementation, I believe that newlines should not be printed out. 
+Yes, most likely. To check for newlines, I would have an if statment to see if there is a newline during the creation of the code. A newline may appear before the closed parentheses/brackets or after the open ones and by checking those location for newlines, you can decide whether or not to print the code. For my implementation, I believe that newlines should not be printed out. This should exceed 10 lines.
 
 
