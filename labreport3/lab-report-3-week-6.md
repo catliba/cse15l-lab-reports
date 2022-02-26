@@ -8,10 +8,9 @@ To do so, we will let ```scp``` copy recursively, with:
 cs15lwi22akj is my account name. It should vary depending on your remote server access
  
 ```-r``` tells ```scp``` to work recursively.\
-```.``` means the source, the currenty directory. You can also add certain files to copy over, for example:
-
+```.``` means the source, the currenty directory. You can also add certain files to copy over, for example:\
 ```scp -r *.java *.md /lib``` copies only files that end with ```.java```, ```.md``` and ```/lib```\
-```~/markdown-parse``` tells ```scp``` to create ```markdown-parse``` directory on the remote server and then copy the current directory to there.
+```~/markdown-parse``` tells ```scp``` to create/put the files in an existing ```markdown-parse``` directory on the remote server and then copy the current directory to there.
 
  Doing so, you copy all files onto the directory.\
  ![Image](sc1.png)
