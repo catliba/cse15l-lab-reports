@@ -19,6 +19,7 @@ To get all 600+ outputs onto a file, I added ```bash script.sh > filename.txt```
 This means that on line 91, Joe's mdparse outputted [/foo] while mine, at line 90, outputted [].
 
 Code for file 14:
+
 ![Image](14md.png)
 
 * *Describe which implementation is correct, or if you think neither is correct, by showing both actual outputs and indicating what the expected output is.*
@@ -28,6 +29,7 @@ I believe the output should output nothing because /foo is not a valid link. Thi
 * *For the implementation that’s not correct (or choose one if both are incorrect), describe the bug (the problem in the code).*
 
 Joe's of this is incorrect because it contains /foo, which is not a link. The bug is because their implemenation of MarkdownParse does not check for the actual contents within the link, it just finds the next ```[```, then find the ```]```, then find the ```(```, then take up to the next ```)```. To fix the code, we should check if the link is valid, with ways such as looking if there is a domain following the link like .com or .org etc. Also, special characters like / should not  be in the link, so in the code, there should be checks on that as well. Some place we can implement this fix in the code is here: 
+
 ![Image](loc2.png)
 
 ### 2nd differences in outputs
@@ -40,9 +42,12 @@ Joe's of this is incorrect because it contains /foo, which is not a link. The bu
 }
 ```
 
-On line 211, Joe's output resulted in ```[url]``` while on line 210, my output resulted in []. Going into their respective files, we can see that the problem occured in 194.md since lines 211 and 210 correspond to file 194.md. ![Image](fileloc.png)
+On line 211, Joe's output resulted in ```[url]``` while on line 210, my output resulted in []. Going into their respective files, we can see that the problem occured in 194.md since lines 211 and 210 correspond to file 194.md. 
+
+![Image](fileloc.png)
 
 Here is what is in 194.md:
+
 ![Image](194md.png)
 
 * *Describe which implementation is correct, or if you think neither is correct, by showing both actual outputs and indicating what the expected output is.*
@@ -52,4 +57,5 @@ I believe that the output should also not output anything. Looking at 194.md, th
 * *For the implementation that’s not correct (or choose one if both are incorrect), describe the bug (the problem in the code).*
 
 Since the code for Joe's printed out url, that means that it doesn't consider what's between the brackets and the parenthesis, but it should matter. The bug is at the part where the code checks the location of the brackets, it should add an if statement to see if the end bracket is followed by the open parenthesis. Some place we can implement this fix in the code is around here: 
+
 ![Image](loc.png)
